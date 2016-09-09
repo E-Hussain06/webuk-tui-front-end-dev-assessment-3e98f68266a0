@@ -33,6 +33,9 @@ xhr.onload = function() {       // When loading
             };
         }
 
+        // From Steps 3 onwards, the replace() string function is used in order to show the correct
+        // number of people for each Step
+        
         // Step 2
         $('.json-2').html('<span>' + string1 + '</span> is also in Baby Step 2');
 
@@ -56,5 +59,8 @@ xhr.onload = function() {       // When loading
 
     }
 };
-xhr.open('GET', './assets/javascripts/baby-steps.json', true); // Opens the file location on server, finds the file and as a GET request
-xhr.send(null); // This request is then successfully sent, which will provide us the working file.
+// Opens the file location on server, finds the file and as a GET request
+xhr.open('GET', './assets/javascripts/baby-steps.json', true);
+
+// This request is then successfully sent, which will provide us the working file.
+xhr.send(null);                                               
