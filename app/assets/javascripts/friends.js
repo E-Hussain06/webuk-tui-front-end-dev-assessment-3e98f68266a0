@@ -1,15 +1,12 @@
-var xhr = new XMLHttpRequest(); // Sends a new request to 
+var xhr = new XMLHttpRequest(); // Setup a request Object
 xhr.onload = function() {       // When loading
-    if(xhr.status === 200) {    // Checking the results status 
+    if(xhr.status === 200) {    // Checking the results status is GOOD
         response = JSON.parse(xhr.responseText); 
 
         var string1 = '', 
             string2 = '',
             string3 = '',
-            string4 = '',
-            string5 = '',
-            string6 = '';
-            string7 = '';
+            string4 = '';
 
         for(var i = 0; i < response.friends.length ; i++ ) {    // Looping inside the JSON Object
             
@@ -33,9 +30,8 @@ xhr.onload = function() {       // When loading
             };
         }
 
-        // From Steps 3 onwards, the replace() string function is used in order to show the correct
-        // number of people for each Step
-        
+        // The friends names returned via the strings variables above are sorted below
+
         // Step 2
         $('.json-2').html('<span>' + string1 + '</span> is also in Baby Step 2');
 
@@ -59,8 +55,9 @@ xhr.onload = function() {       // When loading
 
     }
 };
+
 // Opens the file location on server, finds the file and as a GET request
-xhr.open('GET', './assets/javascripts/baby-steps.json', true);
+xhr.open('GET', './assets/javascripts/baby-steps.json', true); 
 
 // This request is then successfully sent, which will provide us the working file.
-xhr.send(null);                                               
+xhr.send(null); 
